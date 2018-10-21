@@ -1,0 +1,75 @@
+{
+  "name": "@hipstersmoothie/website",
+  "version": "0.0.0",
+  "description": "Andrew Lisowski's personal website",
+  "main": "index.js",
+  "source": "index.js",
+  "author": {
+    "name": "Andrew Lisowski",
+    "email": "lisowski54@gmail.com"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "xo",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-xo-react": "^0.17.0",
+    "husky": "^1.1.2",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3",
+    "xo": "^0.23.0"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
+  },
+  "xo": {
+    "env": [
+      "dom",
+      "jest"
+    ],
+    "extends": [
+      "prettier",
+      "xo-react/space"
+    ]
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "bulma": "^0.7.2",
+    "github-calendar": "^1.2.4",
+    "next": "^7.0.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-vertical-timeline-component": "^2.3.1"
+  }
+}
