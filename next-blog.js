@@ -1,14 +1,16 @@
 const fs = require('fs');
 const path = require('path');
+const webpack = require('webpack');
 const Module = require('module');
 const { promisify } = require('util');
+const WebpackOnBuildPlugin = require('on-build-webpack');
+const AddAssetPlugin = require('add-asset-webpack-plugin');
+const WebpackMildCompile = require('webpack-mild-compile').Plugin;
+
 const RSS = require('rss');
 const g = require('glob');
-
 const mdx = require('@mdx-js/mdx');
 const babel = require('@babel/core');
-
-// const postTemplate = require('./components/blog-post');
 
 const glob = promisify(g);
 
@@ -35,10 +37,6 @@ function requireMDXFileSync(path) {
   const mdxSrc = fs.readFileSync(path, { encoding: 'utf-8' });
   return requireMDXSync(mdxSrc, path);
 }
-
-const postTemplate = fs.readFileSync('./components/blog-post.js', {
-  encoding: 'utf-8'
-});
 
 function readPostMetadata(filePath) {
   const mod = requireMDXFileSync(filePath);
@@ -74,7 +72,7 @@ function generateRSS(posts) {
   return feed.xml({ indent: true });
 }
 
-async function main() {
+async function generateBlog() {
   const postPaths = await glob('pages/**/*.mdx');
   const now = new Date();
 
@@ -102,4 +100,42 @@ async function main() {
   console.info(`Saved RSS feed to ${rssPath}`);
 }
 
-main();
+class BlogIndexPlugin {
+  getChangedFiles(compiler) {
+    const { watchFileSystem } = compiler;
+    const watcher = watchFileSystem.watcher || watchFileSystem.wfs.watcher;
+
+    return Object.keys(watcher.mtimes);
+  }
+
+  apply(compiler) {
+    compiler.hooks.watchRun.tap('MyPlugin', () => {
+      const changedFile = this.getChangedFiles(compiler);
+
+      if (changedFile.find(file => file.includes('.mdx'))) {
+        console.log('changedFile', changedFile);
+        generateBlog();
+      }
+    });
+  }
+}
+
+module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
+  return Object.assign({}, nextConfig, {
+    webpack(config, options) {
+      if (!options.defaultLoaders) {
+        throw new Error(
+          'This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade'
+        );
+      }
+
+      config.plugins.push(new BlogIndexPlugin());
+
+      if (typeof nextConfig.webpack === 'function') {
+        return nextConfig.webpack(config, options);
+      }
+
+      return config;
+    }
+  });
+};

@@ -990,6 +990,11 @@ acorn@^6.0.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.0.2.tgz#6a459041c320ab17592c6317abbfdf4bbaa98ca4"
   integrity sha512-GXmKIvbrN3TV7aVqAzVFaMW8F8wzVX7voEBRO3bDA64+EX37YSayggRJP5Xig6HYHBkWKpFg9W5gg6orklubhg==
 
+add-asset-webpack-plugin@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/add-asset-webpack-plugin/-/add-asset-webpack-plugin-0.1.0.tgz#2d2b16538b44f5ef0e17d60ee3c688978a6f9d82"
+  integrity sha1-LSsWU4tE9e8OF9YO48aIl4pvnYI=
+
 add-subtract-date@^1.0.5:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/add-subtract-date/-/add-subtract-date-1.0.13.tgz#1b602e6c740886f4cd5ce147ca90210ce08a64bb"
@@ -6220,6 +6225,11 @@ object.pick@^1.3.0:
   dependencies:
     isobject "^3.0.1"
 
+on-build-webpack@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/on-build-webpack/-/on-build-webpack-0.1.0.tgz#a287c0e17766e6141926e5f2cbb0d8bb53b76814"
+  integrity sha1-oofA4Xdm5hQZJuXyy7DYu1O3aBQ=
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -8734,6 +8744,11 @@ webpack-merge@^4.1.0:
   integrity sha512-TmSe1HZKeOPey3oy1Ov2iS3guIZjWvMT2BBJDzzT5jScHTjVC3mpjJofgueEzaEd6ibhxRDD6MIblDr8tzh8iQ==
   dependencies:
     lodash "^4.17.5"
+
+webpack-mild-compile@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/webpack-mild-compile/-/webpack-mild-compile-3.2.0.tgz#84141a00a95ac3c2523a2f3c8f5618a0ea9355aa"
+  integrity sha512-f92T7O2CGLxyOgJyNozIMYE96A60OrlXRFSVQpQZRJErGT20Z58TeJnhJqetVo8Zxrgo5CLM9YsCqPWrdl7C8Q==
 
 webpack-sources@1.2.0:
   version "1.2.0"

@@ -11,10 +11,9 @@
   "scripts": {
     "test": "jest",
     "lint": "xo",
-    "dev": "npm run build-blog && next",
+    "dev": "next",
     "build": "next build",
     "start": "next start",
-    "build-blog": "node build-blog.js",
     "clean": "rm -rf out .next posts.js"
   },
   "devDependencies": {
@@ -41,11 +40,14 @@
     "xo": "^0.23.0"
   },
   "dependencies": {
+    "add-asset-webpack-plugin": "^0.1.0",
     "dayjs": "^1.7.7",
     "github-calendar": "^1.2.4",
+    "on-build-webpack": "^0.1.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-vertical-timeline-component": "^2.3.1"
+    "react-vertical-timeline-component": "^2.3.1",
+    "webpack-mild-compile": "^3.2.0"
   },
   "prettier": {
     "singleQuote": true
