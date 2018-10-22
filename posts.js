@@ -4,18 +4,27 @@ export default [
     filePath: 'pages/blog/first.mdx',
     urlPath: '/blog/first',
     title: 'First Post',
-    publishDate: '2018-05-10T12:00:00.000Z'
+    publishDate: '2018-05-10T12:00:00.000Z',
+    author: 'Andrew Lisowski',
+    authorLink: 'https://github.intuit.com/alisowski',
+    avatar: 'https://avatars2.githubusercontent.com/u/1192452?s=400&v=4'
   },
   {
     filePath: 'pages/blog/second.mdx',
     urlPath: '/blog/second',
     title: '2 Post',
-    publishDate: '2018-05-10T12:00:00.000Z'
+    publishDate: '2018-05-10T12:00:00.000Z',
+    author: 'Andrew Lisowski',
+    authorLink: 'https://github.intuit.com/alisowski',
+    avatar: 'https://avatars2.githubusercontent.com/u/1192452?s=400&v=4'
   },
   {
     filePath: 'pages/blog/third.mdx',
     urlPath: '/blog/third',
     title: '3 Post',
-    publishDate: '2018-05-10T12:00:00.000Z'
+    publishDate: '2018-05-10T12:00:00.000Z',
+    author: 'Andrew Lisowski',
+    authorLink: 'https://github.intuit.com/alisowski',
+    avatar: 'https://avatars2.githubusercontent.com/u/1192452?s=400&v=4'
   }
 ];
