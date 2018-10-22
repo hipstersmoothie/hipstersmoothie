@@ -47,6 +47,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-vertical-timeline-component": "^2.3.1",
+    "ress": "^1.2.2",
     "webpack-mild-compile": "^3.2.0"
   },
   "prettier": {
