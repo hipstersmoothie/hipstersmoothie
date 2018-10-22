@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 const Stats = () => (
-  <div className="level stats">
-    <div className="level-item has-text-centered">
+  <div className="level stats is-mobile">
+    <div className="level-item has-text-centered link">
       <div>
         <p className="heading">GitHub</p>
         <p className="title">
@@ -13,7 +13,7 @@ const Stats = () => (
         </p>
       </div>
     </div>
-    <div className="level-item has-text-centered">
+    <div className="level-item has-text-centered link">
       <div>
         <p className="heading">Twitter</p>
         <p className="title">
@@ -23,7 +23,7 @@ const Stats = () => (
         </p>
       </div>
     </div>
-    <div className="level-item has-text-centered">
+    <div className="level-item has-text-centered link">
       <div>
         <p className="heading">Email</p>
         <p className="title">
@@ -33,7 +33,7 @@ const Stats = () => (
         </p>
       </div>
     </div>
-    <div className="level-item has-text-centered">
+    <div className="level-item has-text-centered link">
       <div>
         <p className="heading">NPM</p>
         <p className="title">
@@ -46,6 +46,9 @@ const Stats = () => (
     <style jsx>{`
       .stats {
         margin: 4em auto 0;
+      }
+      .link p + p:hover {
+        color: #e8d0a9;
       }
     `}</style>
   </div>
@@ -96,15 +99,13 @@ const Header = ({ active }) => (
         margin-top: 0.25em;
       }
       .header {
-        background: rgb(103, 183, 246);
-        background: linear-gradient(
-          -10deg,
-          rgba(103, 183, 246, 1) 36%,
-          rgba(198, 218, 233, 1) 100%
-        );
+        background: #6d929b !important;
       }
       .name {
         margin-bottom: 2em;
+      }
+      :global(.tabs ul) {
+        margin: 0 1rem;
       }
     `}</style>
   </section>

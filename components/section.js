@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Section = ({ children, className, isLight }) => (
-  <section
-    className={`hero is-small ${className} ${isLight ? 'is-light' : ''}`}
-  >
+  <section className={`hero ${className} ${isLight ? 'is-light' : ''}`}>
     <div className="hero-body">
       <div className="container">{children}</div>
     </div>

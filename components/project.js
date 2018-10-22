@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const Project = ({ title, githubLink, description, image }) => (
+const Project = ({ title, githubLink, description, image, titleColor }) => (
   <div className="card project">
     <header className="card-header">
       <p className="card-header-title is-centered">{title}</p>
@@ -25,7 +25,13 @@ const Project = ({ title, githubLink, description, image }) => (
     </footer>
     <style jsx>{`
       .project {
-        margin: 1.5%;
+        margin: 1.5rem 0;
+      }
+      .project header {
+        background-color: ${titleColor || '#c1dad6'};
+      }
+      .project header p {
+        color: white;
       }
       .project-image {
         margin-bottom: 15px;
@@ -33,6 +39,11 @@ const Project = ({ title, githubLink, description, image }) => (
       .icon {
         line-height: 22px;
         margin-left: 10px;
+      }
+      @media screen and (min-width: 767px) {
+        .project {
+          margin: 1.5%;
+        }
       }
     `}</style>
   </div>

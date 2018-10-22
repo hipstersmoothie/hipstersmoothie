@@ -17,11 +17,11 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
             integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="stylesheet"
-            href="https://jenil.github.io/bulmaswatch/minty/bulmaswatch.min.css"
+            href="https://jenil.github.io/bulmaswatch/default/bulmaswatch.min.css"
           />
         </Head>
         <body className="content">

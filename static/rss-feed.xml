@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Andrew Lisowski's blog]]></title>
+        <description><![CDATA[Andrew Lisowski's blog]]></description>
+        <link>https://hipstersmoothie.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Mon, 22 Oct 2018 07:57:09 GMT</lastBuildDate>
+        <item>
+            <title><![CDATA[First Post]]></title>
+            <link>https://hipstersmoothie.com/blog/first</link>
+            <guid isPermaLink="false">/blog/first</guid>
+            <pubDate>Thu, 10 May 2018 12:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[2 Post]]></title>
+            <link>https://hipstersmoothie.com/blog/second</link>
+            <guid isPermaLink="false">/blog/second</guid>
+            <pubDate>Thu, 10 May 2018 12:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[3 Post]]></title>
+            <link>https://hipstersmoothie.com/blog/third</link>
+            <guid isPermaLink="false">/blog/third</guid>
+            <pubDate>Thu, 10 May 2018 12:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

@@ -7,6 +7,11 @@ const Layout = ({ children, active }) => (
     <Header active={active} />
     {children}
     <Footer />
+    <style jsx>{`
+      :global(body a) {
+        color: #73b2d9;
+      }
+    `}</style>
   </div>
 );
 
