@@ -17,21 +17,37 @@ const DetailedProject = ({
         <code>{title}</code>
       </h1>
       <h4>{subtitle}</h4>
-      <a href={githubLink}>
-        <span className="icon">
-          <i className="fab fa-2x fa-github icon" />
-        </span>
+      <a href={githubLink} className="icon">
+        <i className="fab fa-2x fa-github icon" />
       </a>
       <style jsx>{`
         .icon {
           margin-top: 15px;
+          align-self: center;
         }
         .feature {
-          align-items: ${right ? 'flex-start' : 'flex-end'};
-          text-align: ${right ? 'left' : 'right'};
+          align-items: flex-start;
+          text-align: left;
           display: flex;
           flex-direction: column;
           justify-content: center;
+        }
+        .title {
+          align-self: center;
+        }
+        @media screen and (min-width: 767px) {
+          .title,
+          .icon {
+            align-self: initial;
+          }
+
+          .feature {
+            align-items: ${right ? 'flex-start' : 'flex-end'};
+            text-align: ${right ? 'left' : 'right'};
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
         }
       `}</style>
     </div>,
@@ -62,14 +78,10 @@ const DetailedProject = ({
     </div>
   ];
 
-  if (right) {
-    columns.reverse();
-  }
-
   return (
     <Section className={`is-small section ${className}`}>
       <div className="hero-body">
-        <div className="columns">{columns}</div>
+        <div className="columns detailProject">{columns}</div>
       </div>
       <style jsx>{`
         :global(.section) {
@@ -80,6 +92,21 @@ const DetailedProject = ({
         }
         :global(.section a:hover) {
           color: initial !important;
+        }
+        .detailProject {
+          flex-direction: column-reverse;
+          display: flex;
+        }
+        .detailProject :global(.column) {
+          flex-basis: initial;
+        }
+        @media screen and (min-width: 767px) {
+          .detailProject :global(.column) {
+            flex-basis: 0;
+          }
+          .detailProject {
+            flex-direction: ${right ? 'row-reverse' : 'row'};
+          }
         }
       `}</style>
     </Section>
@@ -349,6 +376,7 @@ const Projects = () => (
         display: flex;
         align-items: baseline;
         flex-wrap: wrap;
+        justify-content: space-around;
       }
       :global(.projectSection) {
         margin: 2rem auto;
@@ -359,6 +387,9 @@ const Projects = () => (
       @media screen and (min-width: 500px) {
         .projects > :global(.card) {
           flex-basis: 47%;
+        }
+        .projects {
+          justify-content: initial;
         }
       }
       @media screen and (min-width: 1200px) {

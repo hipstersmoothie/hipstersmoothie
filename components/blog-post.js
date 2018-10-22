@@ -64,6 +64,7 @@ const BlogPost = ({ children, post }) => (
         margin-top: 100px;
       }
       .blogTitle {
+        margin-top: 0 !important;
         font-size: 2rem;
         font-weight: lighter;
         line-height: 2;

@@ -142,7 +142,7 @@ const StubList = withRouter(({ posts, router }) => {
 });
 
 export default () => (
-  <div>
+  <div className="blog-index">
     <Head>
       <title>Blog Posts</title>
     </Head>
