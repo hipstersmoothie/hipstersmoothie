@@ -1,7 +1,7 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Layout from '../components/layout';
-import BlogPost from '../components/blog-post';
+import BlogPost from 'next-blog/dist/components/post';
 import posts from '../posts';
 
 // Override the App class to put layout component around the page contents
@@ -15,6 +15,7 @@ export default class MyApp extends App {
     let active;
     let post;
 
+    // Wrap Blog posts in template
     if (pathname.includes('blog/')) {
       post = posts.find(post => post.urlPath === pathname);
     }

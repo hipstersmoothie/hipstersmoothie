@@ -2,6 +2,8 @@ const withPlugins = require('next-compose-plugins');
 
 const withCSS = require('@zeit/next-css');
 const withMDX = require('@zeit/next-mdx')();
+
+// Generates Blog Index
 const withBlog = require('next-blog').Plugin();
 
 module.exports = withPlugins([withCSS, withMDX, withBlog], {
