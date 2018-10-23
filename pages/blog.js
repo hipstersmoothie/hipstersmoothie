@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import BlogIndex from 'next-blog/dist/components/list';
+import BlogIndex from 'next-mdx-blog/dist/components/list';
 
 import posts from '../posts';
 

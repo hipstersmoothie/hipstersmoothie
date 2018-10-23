@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
             href="https://jenil.github.io/bulmaswatch/default/bulmaswatch.min.css"
           />
         </Head>
-        <body className="content">
+        <body>
           <Main />
           <NextScript />
         </body>

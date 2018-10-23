@@ -1,7 +1,7 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Layout from '../components/layout';
-import BlogPost from 'next-blog/dist/components/post';
+import BlogPost from 'next-mdx-blog/dist/components/post';
 import posts from '../posts';
 
 // Override the App class to put layout component around the page contents
