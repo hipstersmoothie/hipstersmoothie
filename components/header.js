@@ -77,17 +77,17 @@ const Header = ({ active }) => (
       <nav className="tabs is-boxed is-fullwidth">
         <ul>
           <li className={!active && 'is-active'}>
-            <Link href="/">
+            <Link href="/" prefetch={true}>
               <a>Overview</a>
             </Link>
           </li>
           <li className={active === 'projects' && 'is-active'}>
-            <Link href="/projects">
+            <Link href="/projects" prefetch={true}>
               <a>Projects</a>
             </Link>
           </li>
           <li className={active === 'blog' && 'is-active'}>
-            <Link href="/blog">
+            <Link href="/blog" prefetch={true}>
               <a>Blog</a>
             </Link>
           </li>

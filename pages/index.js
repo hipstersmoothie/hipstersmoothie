@@ -32,7 +32,8 @@ const Workplace = ({ logo, title, place, location, description, date }) => (
       <span className="location">{location}</span>
     </h6>
 
-    <p>{description}</p>
+    {typeof description === 'string' ? <p>{description}</p> : description}
+
     <style jsx>{`
       .place {
         font-weight: 500;

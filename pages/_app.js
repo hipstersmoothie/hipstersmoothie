@@ -30,7 +30,7 @@ export default class MyApp extends App {
       <Container>
         <Layout pathname={pathname} active={active}>
           {pathname.includes('blog/') ? (
-            <BlogPost post={post}>
+            <BlogPost post={post} className="content">
               <Component {...pageProps} />
             </BlogPost>
           ) : (
