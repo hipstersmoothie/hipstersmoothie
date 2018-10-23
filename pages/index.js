@@ -15,7 +15,7 @@ import Project from '../components/project';
 
 const Workplace = ({ logo, title, place, location, description, date }) => (
   <VerticalTimelineElement
-    className="vertical-timeline-element--work content"
+    className="vertical-timeline-element--work content VerticalTimelineElement-wrapper"
     date={date}
     iconStyle={{
       background: 'white',
@@ -35,6 +35,9 @@ const Workplace = ({ logo, title, place, location, description, date }) => (
     {typeof description === 'string' ? <p>{description}</p> : description}
 
     <style jsx>{`
+      :global(.VerticalTimelineElement-wrapper) {
+        color: #363636 !important;
+      }
       .place {
         font-weight: 500;
       }
@@ -108,7 +111,6 @@ class Index extends Component {
           </p>
           <p>
             <span className="college">College:</span> California Polytechnic
-            State University, San Luis Obispo
           </p>
           <p>
             <span className="college">Phone:</span>{' '}

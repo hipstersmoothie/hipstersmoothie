@@ -12,7 +12,7 @@ const Project = ({ title, githubLink, description, image, titleColor }) => (
             <img className="image is-128x128" src={image} />
           </div>
         </div>
-        {description}
+        {typeof description === 'string' ? <p>{description}</p> : description}
       </div>
     </div>
     <footer className="card-footer">

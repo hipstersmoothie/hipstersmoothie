@@ -52,29 +52,27 @@ const DetailedProject = ({
       `}</style>
     </div>,
     <div key="pic" className="column">
-      <p>
-        <div
-          className="image"
+      <div
+        className="image"
+        style={{
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          position: 'relative'
+        }}
+      >
+        <img
+          src={image}
+          alt="Markdown"
+          width="300"
+          height="125"
           style={{
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            position: 'relative'
+            width: '100%',
+            height: 'auto',
+            maxWidth: '100%',
+            marginBottom: -4
           }}
-        >
-          <img
-            src={image}
-            alt="Markdown"
-            width="300"
-            height="125"
-            style={{
-              width: '100%',
-              height: 'auto',
-              maxWidth: '100%',
-              marginBottom: -4
-            }}
-          />
-        </div>
-      </p>
+        />
+      </div>
     </div>
   ];
 
