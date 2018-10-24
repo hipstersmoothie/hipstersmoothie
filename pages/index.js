@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+import Link from '../components/prefixed-link';
 import {
   VerticalTimeline,
   VerticalTimelineElement
@@ -12,7 +12,6 @@ import 'github-calendar/dist/github-calendar.css';
 import Section from '../components/section';
 import ContributionsGraph from '../components/contributions-graph';
 import Project from '../components/project';
-import { prefixURL } from '../components/utils';
 
 const Workplace = ({ logo, title, place, location, description, date }) => (
   <VerticalTimelineElement
@@ -255,11 +254,11 @@ class Index extends Component {
         <Section className="is-medium has-text-centered">
           <h3 className="title">
             Want to know more about me? Check out my{' '}
-            <Link href="/projects" as={prefixURL('/projects')}>
+            <Link href="/projects">
               <a>projects</a>
             </Link>{' '}
             or read my{' '}
-            <Link href="/blog" as={prefixURL('/blog')}>
+            <Link href="/blog">
               <a>blog</a>
             </Link>
             .

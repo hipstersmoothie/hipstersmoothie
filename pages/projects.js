@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Section from '../components/section';
 import Project from '../components/project';
-import { prefixURL } from '../components/utils';
+import Image from '../components/prefixed-image';
 
 const DetailedProject = ({
   title,
@@ -61,7 +61,7 @@ const DetailedProject = ({
           position: 'relative'
         }}
       >
-        <img
+        <Image
           src={image}
           alt="Markdown"
           width="300"
@@ -122,7 +122,7 @@ const Projects = () => (
     <DetailedProject
       right
       title="bmp-ts"
-      image={prefixURL('static/bmp-ts.png')}
+      image="static/bmp-ts.png"
       githubLink="https://github.com/hipstersmoothie/bmp-js/"
       subtitle={
         <span>
@@ -137,7 +137,7 @@ const Projects = () => (
     <DetailedProject
       className="is-light"
       title="jimp"
-      image={prefixURL('static/jimp.png')}
+      image="static/jimp.png"
       githubLink="https://github.com/oliver-moran/jimp/"
       subtitle={
         <span>
@@ -154,7 +154,7 @@ const Projects = () => (
     <DetailedProject
       right
       title="compose-tiny"
-      image={prefixURL('static/compose-tiny.png')}
+      image="static/compose-tiny.png"
       githubLink="https://github.com/hipstersmoothie/compose-tiny"
       subtitle={
         <span>
@@ -168,7 +168,7 @@ const Projects = () => (
       className="is-light"
       title="ignite"
       githubLink="https://github.com/intuit/Ignite"
-      image={prefixURL('static/ignite.png')}
+      image="static/ignite.png"
       subtitle={
         <span>
           Modern markdown documentation generator
