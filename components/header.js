@@ -99,7 +99,7 @@ const Header = ({ active }) => (
             </a>
           </li>
           <li className={active === 'projects' && 'is-active'}>
-            <Link href="/projects" prefetch>
+            <Link href="/projects">
               <a>Projects</a>
             </Link>
           </li>
