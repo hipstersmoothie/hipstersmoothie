@@ -13,8 +13,9 @@
     "lint": "xo",
     "dev": "next",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
-    "deploy": "./scripts/release-website.sh",
+    "deploy": "npm run build && npm run export && touch out/.nojekyll && push-dir --dir=out --branch=gh-pages --cleanup --verbose",
     "clean": "rm -rf out .next posts.js"
   },
   "devDependencies": {
