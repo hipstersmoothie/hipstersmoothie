@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from './prefixed-link';
+import { Link } from 'next-prefixed';
 
 const Stats = () => (
   <div className="level stats is-mobile">

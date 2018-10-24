@@ -1,10 +1,10 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import BlogPost from 'next-mdx-blog/dist/components/post';
+import { prefixURL } from 'next-prefixed';
 
 import Layout from '../components/layout';
 import posts from '../posts';
-import { prefixURL } from '../components/utils';
 
 // Override the App class to put layout component around the page contents
 // https://github.com/zeit/next.js#custom-app

@@ -5926,6 +5926,11 @@ next-mdx-blog@^0.1.0:
     react-dom "^16.5.2"
     rss "^1.2.2"
 
+next-prefixed@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/next-prefixed/-/next-prefixed-0.0.3.tgz#176f8fa84cd71c750897b1d3ad10bf525c7918af"
+  integrity sha512-KrDluYVmwWPxZCMvDMkcx8NQo17DK8EioxBg8/WUdgBn0QdaLK78/bXyQvK25/MzvV+SLfOebbjQ5UwFecndZw==
+
 next@^7.0.2:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/next/-/next-7.0.2.tgz#5ff6b3f0e6cf03ce539d5779a55dc1f8fb1759d7"

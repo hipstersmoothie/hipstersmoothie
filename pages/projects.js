@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Section from '../components/section';
 import Project from '../components/project';
-import Image from '../components/prefixed-image';
+import { Image } from 'next-prefixed';
 
 const DetailedProject = ({
   title,
