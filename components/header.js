@@ -1,4 +1,5 @@
 import React from 'react';
+import Router from 'next/router';
 import Link from 'next/link';
 
 const Stats = () => (
@@ -93,9 +94,9 @@ const Header = ({ active }) => (
       <nav className="tabs is-boxed is-fullwidth">
         <ul>
           <li className={!active && 'is-active'}>
-            <Link href="/" prefetch>
-              <a>Overview</a>
-            </Link>
+            <a href="/" onClick={() => Router.push('/')}>
+              Overview
+            </a>
           </li>
           <li className={active === 'projects' && 'is-active'}>
             <Link href="/projects" prefetch>
