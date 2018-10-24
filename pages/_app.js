@@ -42,6 +42,9 @@ export default class MyApp extends App {
           :global(strong) {
             color: rgba(103, 183, 246, 1) !important;
           }
+          :global(pre .hljs) {
+            background: initial;
+          }
         `}</style>
       </Container>
     );

@@ -23,6 +23,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://jenil.github.io/bulmaswatch/default/bulmaswatch.min.css"
           />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"
+          />
         </Head>
         <body>
           <Main />

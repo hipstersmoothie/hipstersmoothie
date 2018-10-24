@@ -1,6 +1,165 @@
 export const meta = {
-  publishDate: '2018-05-10T12:00:00Z',
-  title: 'First Post',
+  publishDate: '2018-06-24T12:00:00Z',
+  title: 'Using Webpack and React-Ideal-Image for Buttery Smooth Images',
 }
 
-# Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+Images on the webpack have a few drawbacks that take some programming to get around.
+
+- Height and width are unknown — this can cause page jumps and weird layouts
+- Blank space while loading
+- Large images are slow on old devices or weak internet connections
+- The HTML page will download all the images on page load — this can be super slow if you have a lot of images on one page
+
+Luckily there have been a bunch of web standards made to solve these problems. But navigating them all them and then putting it all together can be daunting.
+
+Enter React-Ideal-Image. It is a react component that has a bunch of cool functionality built in. Such as: LQIP, WebP, SrcSet, and other UX/features to help you on slow devices. You can read more about all the cool things that went into the component here. But one problem still remains when using this component, how do you generate all the necessary images to make this component really shine?
+
+## Loading Images with Webpack
+
+You probably guessed it by the title, the way we can achieve all this cool functionality is by using Webpack and a few loaders to transform our images at build time!
+
+First here is a simple configuration that will load the images during the build.
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.(gif|png|jpe?g)$/i,
+        use: ['file-loader']
+      }
+    ]
+  }
+};
+```
+
+And here is an image rendered with React-Ideal-Image. (right now it doesn’t do anything too cool).
+
+```js
+import IdealImage from 'react-ideal-image';
+import image from './goat.png';
+const ImageComponent = props => {
+  <IdealImage
+    {...this.props}
+    src={image}
+    width={1786}
+    height={1540}
+    placeholder={{ lqip: image }}
+    srcSet={[{ width: 1786, src: image }]}
+  />;
+};
+```
+
+Okay, so we have an image working and rendering, but we aren’t using any of the cool features! You might notice that we are just using the image for the LQIP image. This doesn’t get us anything and will probably make our app al little slower.
+
+## LQIP Loader
+
+LQIP Loader will take any image and produce a Base64 image string and include it with the src any time you import an object, pretty cool! Let’s see what our config looks like now.
+
+```js
+{
+  test: /\.(gif|png|jpe?g)$/i,
+  use: [
+    'lqip-loader'
+    'file-loader'
+  ]
+}
+```
+
+Now in our component when we import an image, we get an object with a path to the original src and the LQIP Base64 string.
+
+```js
+import IdealImage from 'react-ideal-image';
+import image from './goat.png';
+const ImageComponent = props => {
+  <IdealImage
+    {...this.props}
+    src={image.src}
+    width={1786}
+    height={1540}
+    placeholder={{ lqip: image.preSrc }}
+    srcSet={[{ width: 1786, src: image.src }]}
+  />;
+};
+```
+
+Now as we scroll down the page, React-Ideal-Image will show us the initial LQIP image:
+
+LQIP Image
+
+And then once the actual image has downloaded it will show us the real image. So cool!
+
+Actual Image
+
+But this image is HUGE! Slow devices will have trouble even with LQIP enabled. And we still have the height and the width hard-coded in the component, not good.
+
+## Generating srcset
+
+srcset allows use to tell the browser about multiple sizes of our image and it decided which on to load based on the size of the device. To accomplish this we need another loader. For this we will use responsive-loader since it has a simple API and works with the LQIP loader.
+
+We do not need the file-loader anymore because the responsive-loader does this for us. Here I include a few sizes that should cover most devices.
+
+```js
+{
+  test: /\.(gif|png|jpe?g)$/i,
+  use: [
+    'lqip-loader'
+    {
+      loader: 'responsive-loader',
+      options: {
+        sizes: [300, 600, 900, 1200]
+      }
+    }
+  ]
+}
+```
+
+Now we can pass the generated srcset to React-Ideal-Image. The browser will load the smallest size image suitable for the device.
+
+```js
+import IdealImage from 'react-ideal-image';
+import image from './goat.png';
+const ImageComponent = props => {
+  <IdealImage
+    {...this.props}
+    // responsive-loader puts its data in an object
+    src={image.src.src}
+    width={image.src.height}
+    height={image.src.width}
+    placeholder={{ lqip: image.preSrc }}
+    srcSet={image.src.images.map(i => ({
+      ...i,
+      src: i.path
+    }))}
+  />;
+};
+```
+
+We’re almost done! All that’s left is to optimize it a little bit.
+
+## Optimization
+
+Some images can be huge but contain very little data. Minifying our images might be able to save us from transferring needlessly large files to the client. To accomplish this lets use image-webpack-loader, which uses imagemin to make the smallest images possible.
+
+```js
+{
+  test: /\.(gif|png|jpe?g)$/i,
+  use: [
+    'lqip-loader',
+    {
+      loader: 'responsive-loader',
+      options: {
+        sizes: [300, 600, 900, 1200],
+        name: '[path][name]-[width].[ext]'
+      }
+    },
+    'image-webpack-loader'
+  ]
+}
+```
+
+In practice I was able to see some of my images reduce up to 85% in size!
+
+## Conclusion
+
+You can make this component a little more generic and not just render an image of a goat, but anything you pass in. This image is far more useful to the user and creates a smoother loading experience on a range of devices
