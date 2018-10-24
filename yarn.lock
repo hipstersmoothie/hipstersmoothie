@@ -5929,6 +5929,20 @@ next-compose-plugins@^2.1.1:
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.1.1.tgz#7da0a3ce0c8ce267b5cb4164d2fb6e4aaf61bf86"
   integrity sha512-4yLtmGjnBlzuYdL66+c/zi8ljl24sK9jtP31UsTG1ZAAHj+ybWfEG/S+HMwK+pD2fNmJ4xQyr4xOubzExcS+Lg==
 
+next-mdx-blog@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/next-mdx-blog/-/next-mdx-blog-0.0.10.tgz#7f70dcbf159ee6207cbc19a81252c3253fc25c20"
+  integrity sha512-2hCAbpUGLktZQ0i3Fbnk6pHg2scVBzrNa3YsMc3+MBw3+GcHYsnHBloSBCCvNQgWrjIO+gPdyBR3DLh+h5w+Tg==
+  dependencies:
+    "@mdx-js/mdx" "^0.15.5"
+    dayjs "^1.7.7"
+    glob "^7.1.3"
+    next "^7.0.2"
+    prop-types "^15.6.2"
+    react "^16.5.2"
+    react-dom "^16.5.2"
+    rss "^1.2.2"
+
 next@^7.0.2:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/next/-/next-7.0.2.tgz#5ff6b3f0e6cf03ce539d5779a55dc1f8fb1759d7"

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Project = ({ title, githubLink, description, image, titleColor }) => (
   <div className="card project">

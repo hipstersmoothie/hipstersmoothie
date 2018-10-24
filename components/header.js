@@ -7,7 +7,11 @@ const Stats = () => (
       <div>
         <p className="heading">GitHub</p>
         <p className="title">
-          <a href="https://github.com/hipstersmoothie" target="_blank">
+          <a
+            href="https://github.com/hipstersmoothie"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-github" />
           </a>
         </p>
@@ -17,7 +21,11 @@ const Stats = () => (
       <div>
         <p className="heading">Twitter</p>
         <p className="title">
-          <a href="https://twitter.com/HipsterSmoothie" target="_blank">
+          <a
+            href="https://twitter.com/HipsterSmoothie"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-twitter" />
           </a>
         </p>
@@ -27,7 +35,11 @@ const Stats = () => (
       <div>
         <p className="heading">Email</p>
         <p className="title">
-          <a href="mailto:lisowski54@gmail.com" target="_blank">
+          <a
+            href="mailto:lisowski54@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="far fa-envelope" />
           </a>
         </p>
@@ -37,7 +49,11 @@ const Stats = () => (
       <div>
         <p className="heading">NPM</p>
         <p className="title">
-          <a href="https://www.npmjs.com/~alisowski" target="_blank">
+          <a
+            href="https://www.npmjs.com/~alisowski"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-npm" />
           </a>
         </p>
