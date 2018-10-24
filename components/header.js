@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { prefixURL } from './utils';
 
 const Stats = () => (
   <div className="level stats is-mobile">
@@ -93,17 +94,17 @@ const Header = ({ active }) => (
       <nav className="tabs is-boxed is-fullwidth">
         <ul>
           <li className={!active && 'is-active'}>
-            <Link href="/" prefetch={true}>
+            <Link href="/" as={prefixURL('/')} prefetch={true}>
               <a>Overview</a>
             </Link>
           </li>
           <li className={active === 'projects' && 'is-active'}>
-            <Link href="/projects" prefetch={true}>
+            <Link href="/projects" as={prefixURL('/projects')} prefetch={true}>
               <a>Projects</a>
             </Link>
           </li>
           <li className={active === 'blog' && 'is-active'}>
-            <Link href="/blog" prefetch={true}>
+            <Link href="/blog" as={prefixURL('/blog')} prefetch={true}>
               <a>Blog</a>
             </Link>
           </li>
