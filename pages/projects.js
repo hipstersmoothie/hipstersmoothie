@@ -281,7 +281,7 @@ const Projects = () => (
               </span>
             </span>
           }
-          image="http://www.stickpng.com/assets/images/58af04446c252499281ae91f.png"
+          image="/static/soundcloud.png"
         />
       </div>
 
