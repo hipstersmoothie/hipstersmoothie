@@ -16,7 +16,7 @@
     "export": "next export",
     "start": "next start",
     "create:cname": "touch out/CNAME && echo \"hipstersmoothie.com\" >> out/CNAME",
-    "deploy": "npm run build && npm run export && npm run create:cname && touch out/.nojekyll && push-dir --dir=out --branch=gh-pages --cleanup --verbose",
+    "deploy": "npm run build && npm run export && npm run create:cname && touch out/.nojekyll && push-dir --dir=out --branch=master --cleanup --verbose --remote=github-io",
     "clean": "rm -rf out .next posts.js"
   },
   "devDependencies": {
