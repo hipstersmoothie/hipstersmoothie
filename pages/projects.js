@@ -189,6 +189,12 @@ const Projects = () => (
 
       <div className="projects">
         <Project
+          githubLink="https://github.com/hipstersmoothie/next-prefixed"
+          title="next-prefixed"
+          description="Prefix next links and images. Useful when serving from basePath. (Created while building this website!)"
+          image="https://camo.githubusercontent.com/7863b0cf07d8b283a11cefd61904ef682b2055dd/68747470733a2f2f7365656b6c6f676f2e636f6d2f696d616765732f4e2f6e6578742d6a732d6c6f676f2d373932394243443336462d7365656b6c6f676f2e636f6d2e706e67"
+        />
+        <Project
           githubLink="https://github.com/hipstersmoothie/bulma-pagination-react"
           title="bulma-pagination-react"
           description="Bulma pagination as a react component. (Created while building this website!)"

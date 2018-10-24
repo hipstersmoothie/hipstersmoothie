@@ -9,7 +9,7 @@ const Project = ({ title, githubLink, description, image, titleColor }) => (
       <div className="content">
         <div className="level project-image">
           <div className="level-item">
-            <img className="image is-128x128" src={image} />
+            <img className="image" width={128} src={image} />
           </div>
         </div>
         {typeof description === 'string' ? <p>{description}</p> : description}
