@@ -385,9 +385,6 @@ const Projects = () => (
         width: fit-content;
         margin: auto;
       }
-      strong {
-        color: rgba(103, 183, 246, 1) !important;
-      }
       .projects {
         display: flex;
         align-items: baseline;

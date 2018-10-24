@@ -266,9 +266,6 @@ class Index extends Component {
         </Section>
 
         <style jsx>{`
-          strong {
-            color: rgba(103, 183, 246, 1);
-          }
           .college {
             font-weight: 600;
           }

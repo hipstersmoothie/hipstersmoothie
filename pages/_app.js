@@ -38,6 +38,11 @@ export default class MyApp extends App {
             <Component {...pageProps} />
           )}
         </Layout>
+        <style jsx>{`
+          :global(strong) {
+            color: rgba(103, 183, 246, 1) !important;
+          }
+        `}</style>
       </Container>
     );
   }
