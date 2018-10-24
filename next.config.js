@@ -2,6 +2,8 @@ const withPlugins = require('next-compose-plugins');
 
 const withCSS = require('@zeit/next-css');
 const withMDX = require('@zeit/next-mdx')();
+const debug = process.env.NODE_ENV !== 'production';
+const assetPrefix = debug ? '' : '/pages/WHAT/what';
 
 // Generates Blog Index
 const withBlog = require('next-mdx-blog').Plugin({
@@ -11,5 +13,9 @@ const withBlog = require('next-mdx-blog').Plugin({
 });
 
 module.exports = withPlugins([withCSS, withMDX, withBlog], {
-  pageExtensions: ['js', 'mdx']
+  pageExtensions: ['js', 'mdx'],
+  assetPrefix,
+  publicRuntimeConfig: {
+    assetPrefix
+  }
 });
