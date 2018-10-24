@@ -5911,10 +5911,10 @@ next-compose-plugins@^2.1.1:
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.1.1.tgz#7da0a3ce0c8ce267b5cb4164d2fb6e4aaf61bf86"
   integrity sha512-4yLtmGjnBlzuYdL66+c/zi8ljl24sK9jtP31UsTG1ZAAHj+ybWfEG/S+HMwK+pD2fNmJ4xQyr4xOubzExcS+Lg==
 
-next-mdx-blog@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/next-mdx-blog/-/next-mdx-blog-0.1.0.tgz#de273a0aa9c117ea0bad60d705f7b8c0722e7fb2"
-  integrity sha512-kduuWpHHWXyfyS7kPdabjg/x1cVMSkj0G+Z1kgdWwDz/Mr9T9gtX1pJGqNvtzpRcoB0WcSwUvaBTJZeY/HdjNg==
+next-mdx-blog@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/next-mdx-blog/-/next-mdx-blog-1.0.0.tgz#c4308cbdb3ae83c54b262786f83b2266db793eb3"
+  integrity sha512-XAJ6+f1P3zCx3Mt9B6/9r9UCAuYCWmGNtM1DO7h1cgMh0pZTs9fOaw8qxrjX2yeHzuYVe2CYaqvFS+K01WjDEQ==
   dependencies:
     "@mdx-js/mdx" "^0.15.5"
     bulma-pagination-react "^0.0.3"
@@ -5925,11 +5925,6 @@ next-mdx-blog@^0.1.0:
     react "^16.5.2"
     react-dom "^16.5.2"
     rss "^1.2.2"
-
-next-prefixed@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/next-prefixed/-/next-prefixed-0.0.3.tgz#176f8fa84cd71c750897b1d3ad10bf525c7918af"
-  integrity sha512-KrDluYVmwWPxZCMvDMkcx8NQo17DK8EioxBg8/WUdgBn0QdaLK78/bXyQvK25/MzvV+SLfOebbjQ5UwFecndZw==
 
 next@^7.0.2:
   version "7.0.2"

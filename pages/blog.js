@@ -14,6 +14,6 @@ export default () => (
       <title>Blog Posts</title>
     </Head>
 
-    <BlogIndex posts={posts} className="content" />
+    <BlogIndex posts={posts} stubClassName="content" />
   </div>
 );

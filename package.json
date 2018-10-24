@@ -15,8 +15,7 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "create:cname": "touch out/CNAME && echo \"hipstersmoothie.com\" >> out/CNAME",
-    "deploy": "npm run build && npm run export && npm run create:cname && touch out/.nojekyll && push-dir --dir=out --branch=master --cleanup --verbose --remote=github-io",
+    "deploy": "npm run build && npm run export && touch out/.nojekyll && push-dir --dir=out --branch=master --cleanup --verbose --remote=github-io",
     "clean": "rm -rf out .next posts.js"
   },
   "devDependencies": {
@@ -32,7 +31,7 @@
     "lint-staged": "^7.3.0",
     "next": "^7.0.2",
     "next-compose-plugins": "^2.1.1",
-    "next-mdx-blog": "^0.1.0",
+    "next-mdx-blog": "^1.0.0",
     "prettier": "^1.14.3",
     "webpack": "^4.22.0",
     "xo": "^0.23.0"
