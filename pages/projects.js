@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import Section from '../components/section';
 import Project from '../components/project';
-import { Image } from 'next-prefixed';
 
 const DetailedProject = ({
   title,
@@ -61,7 +60,7 @@ const DetailedProject = ({
           position: 'relative'
         }}
       >
-        <Image
+        <img
           src={image}
           alt="Markdown"
           width="300"

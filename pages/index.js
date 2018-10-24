@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
-import { Link } from 'next-prefixed';
+import Link from 'next/link';
 import {
   VerticalTimeline,
   VerticalTimelineElement

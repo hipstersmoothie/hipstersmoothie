@@ -1,7 +1,6 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import BlogPost from 'next-mdx-blog/dist/components/post';
-import { prefixURL } from 'next-prefixed';
 
 import Layout from '../components/layout';
 import posts from '../posts';
@@ -19,7 +18,7 @@ export default class MyApp extends App {
 
     // Wrap Blog posts in template
     if (pathname.includes('blog/')) {
-      post = posts.find(post => post.urlPath === prefixURL(pathname));
+      post = posts.find(post => post.urlPath === pathname);
     }
 
     if (pathname.includes('/projects')) {

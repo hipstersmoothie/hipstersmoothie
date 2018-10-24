@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'next-prefixed';
+import Link from 'next/link';
 
 const Stats = () => (
   <div className="level stats is-mobile">
@@ -93,17 +93,17 @@ const Header = ({ active }) => (
       <nav className="tabs is-boxed is-fullwidth">
         <ul>
           <li className={!active && 'is-active'}>
-            <Link href="/" prefetch={true}>
+            <Link href="/" prefetch>
               <a>Overview</a>
             </Link>
           </li>
           <li className={active === 'projects' && 'is-active'}>
-            <Link href="/projects" prefetch={true}>
+            <Link href="/projects" prefetch>
               <a>Projects</a>
             </Link>
           </li>
           <li className={active === 'blog' && 'is-active'}>
-            <Link href="/blog" prefetch={true}>
+            <Link href="/blog" prefetch>
               <a>Blog</a>
             </Link>
           </li>
