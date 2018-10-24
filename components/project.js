@@ -40,9 +40,9 @@ const Project = ({ title, githubLink, description, image, titleColor }) => (
         line-height: 22px;
         margin-left: 10px;
       }
-      @media screen and (min-width: 767px) {
+      @media screen and (min-width: 500px) {
         .project {
-          margin: 1.5%;
+          margin: 1.5rem 1.5%;
         }
       }
     `}</style>
