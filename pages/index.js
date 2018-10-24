@@ -140,7 +140,7 @@ class Index extends Component {
                     </li>
                   </ul>
                 }
-                logo="http://assets.stickpng.com/thumbs/5848092acef1014c0b5e48fa.png"
+                logo="/static/intuit-logo.png"
               />{' '}
               <Workplace
                 date="2016 - 2017"
@@ -162,7 +162,7 @@ class Index extends Component {
                     </li>
                   </ul>
                 }
-                logo="http://assets.stickpng.com/thumbs/5848092acef1014c0b5e48fa.png"
+                logo="/static/intuit-logo.png"
               />
               <Workplace
                 date="2016"
@@ -184,7 +184,7 @@ class Index extends Component {
                     </li>
                   </ul>
                 }
-                logo="http://assets.stickpng.com/thumbs/5848092acef1014c0b5e48fa.png"
+                logo="/static/intuit-logo.png"
               />
               <Workplace
                 date="2014 - 2015"
@@ -201,7 +201,7 @@ class Index extends Component {
                     <li>Tested 80% of the application</li>
                   </ul>
                 }
-                logo="http://assets.stickpng.com/thumbs/5848092acef1014c0b5e48fa.png"
+                logo="/static/intuit-logo.png"
               />
               <Workplace
                 date="2013"
@@ -220,7 +220,7 @@ class Index extends Component {
                     <li>Fixed bugs in the application</li>
                   </ul>
                 }
-                logo="http://assets.stickpng.com/thumbs/5848092acef1014c0b5e48fa.png"
+                logo="/static/intuit-logo.png"
               />
               <Workplace
                 date="2012"
