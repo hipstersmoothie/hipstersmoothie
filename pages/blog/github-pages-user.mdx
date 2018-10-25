@@ -1,0 +1,89 @@
+export const meta = {
+  publishDate: '2018-10-24T12:00:00Z',
+  title: 'How to set up a Github Pages for your user account'
+}
+
+This post aims to outline the steps one must take to publish and manage a Github Pages website for your user account.
+
+Goals:
+
+- Host source code on Github
+- Use `your-username.github.io` to host the page
+- Use custom domain
+
+This website was made using the following technique.
+
+# 1. Setup source repository
+
+Set up a repository that contains the files used to build your website. It doesn't really matter how you build it but it must output a directory with all the static files needed to serve your website. For this post I will be using `next.js` as an example static website generator.
+
+# 2. Setup github.io repository
+
+This repository will be used for hosting your build website. This is what will be served on `your-username.github.io`.
+
+Set it as a remote for you source code repository:
+
+```sh
+git add remote github-io https://github.com/your-username/your-username.github.io
+```
+
+# 3. Install `push-dir`
+
+We are going to need to push our project to github somehow. I've found that `push-dir` is a great tool with a simple interface.
+
+```sh
+yarn add push-dir
+```
+
+# 4. Setup deployment script
+
+Add a deploy script to your project.
+
+```json
+{
+  "scripts": {
+    "deploy": "next build && next export && touch out/.nojekyll && push-dir --dir=out --branch=master --cleanup --verbose --remote=github-io"
+  }
+}
+```
+
+## Important steps:
+
+### build
+
+You must first build your website in some way. Here we run `next build` and `next export`.
+
+### .nojekyll
+
+Since the `next.js` website creates some folder with `_` in the name we need to include a `.nojekyll`. If you build process produces folder or files with underscore you need to do this too.
+
+### push-dir
+
+Finally this is where the magic happens. After we have built the website we use `push-dir` to push the output directory to the `github-io`'s master branch.
+
+Now we have successfully published to `your-username.github.io`
+
+# 5. Setup custom domain
+
+Follow [this guide](https://help.github.com/articles/setting-up-an-apex-domain-and-www-subdomain/) on how to add the correct IPs to your DNS.
+
+Once you have done that we need to generate a CNAME file for our custom domain and make sure that it gets included in the out directory that is pushed to github-io.
+
+Add the following to scripts (for `next.js` we put the CNAME in the `out` directory):
+
+```json
+{
+  "scripts": {
+    "create:cname": "touch out/CNAME && echo \"your.com\" >> out/CNAME",
+    "deploy": "next build && next export && && npm run create:cname && touch out/.nojekyll && push-dir --dir=out --branch=master --cleanup --verbose --remote=github-io"
+  }
+}
+```
+
+## Enable HTTPS on Github
+
+Go to the settings page for your `hipstersmoothie.github.io` repository and check the `Enforce HTTPS` option.
+
+# All done!
+
+That's it! Now you have a static website managed through github with a custom domain
