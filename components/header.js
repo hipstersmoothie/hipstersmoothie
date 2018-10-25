@@ -104,7 +104,7 @@ const Header = ({ active }) => (
             </Link>
           </li>
           <li className={active === 'blog' && 'is-active'}>
-            <Link href="/blog" prefetch>
+            <Link href="/blog">
               <a>Blog</a>
             </Link>
           </li>

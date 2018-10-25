@@ -8,7 +8,7 @@ posts.forEach(async post => {
   post.file = import('../pages' + post.filePath.replace('pages', ''));
 });
 
-export default () => (
+const blogPage = () => (
   <div className="blog-index">
     <Head>
       <title>Blog Posts</title>
@@ -17,3 +17,19 @@ export default () => (
     <BlogIndex posts={posts} stubClassName="content" />
   </div>
 );
+
+blogPage.getInitialProps = async () => {
+  await Promise.all(
+    posts.map(async post => {
+      post.BlogPost = (await post.file).default;
+
+      return post;
+    })
+  );
+
+  return {
+    posts
+  };
+};
+
+export default blogPage;

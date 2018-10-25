@@ -89,7 +89,7 @@ class Index extends Component {
             />
             <Project
               className="column"
-              image="https://github.com/hipstersmoothie/bmp-js/raw/master/logo.png"
+              image="/static/bmp-ts-logo.png"
               githubLink="https://github.com/hipstersmoothie/bmp-js"
               title="bmp-ts"
               description="A pure typescript BMP encoder and decoder for node.js. Supports decoding and encoding in all bit depths (1, 4, 8, 16, 24, 32)."
