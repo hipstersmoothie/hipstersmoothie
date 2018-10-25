@@ -2,13 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 import BlogIndex from 'next-mdx-blog/dist/components/list';
 
-import posts from '../posts';
+import postsData from '../posts';
 
-posts.forEach(async post => {
+postsData.forEach(async post => {
   post.file = import('../pages' + post.filePath.replace('pages', ''));
 });
 
-const blogPage = () => (
+const blogPage = ({ posts }) => (
   <div className="blog-index">
     <Head>
       <title>Blog Posts</title>
@@ -19,17 +19,17 @@ const blogPage = () => (
 );
 
 blogPage.getInitialProps = async () => {
+  console.log('getInitialProps');
   await Promise.all(
-    posts.map(async post => {
+    postsData.map(async post => {
       post.BlogPost = (await post.file).default;
 
       return post;
     })
   );
 
-  return {
-    posts
-  };
+  console.log(postsData);
+  return { posts: [...postsData] };
 };
 
 export default blogPage;
