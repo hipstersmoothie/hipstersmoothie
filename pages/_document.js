@@ -10,9 +10,18 @@ export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
     const { html, head, errorHtml, chunks } = renderPage();
 
-    flushBlog();
-
-    return { html, head, errorHtml, chunks, styles: [flush()] };
+    return {
+      html,
+      head,
+      errorHtml,
+      chunks,
+      styles: (
+        <div>
+          {flush()}
+          {flushBlog()}
+        </div>
+      )
+    };
   }
 
   render() {
