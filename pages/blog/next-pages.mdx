@@ -1,0 +1,74 @@
+export const meta = {
+  publishDate: '2018-10-25T08:45:08.121Z',
+  title: 'Using Next.js with Github Pages'
+}
+
+Getting `next.js` to work on a domain at anything other than the root takes a little extra configuration. This post will walk you though the steps to get it up and running.
+
+## Prefix Static Assets
+
+Github project pages urls are deployed to `https://your-username.github.io/your-project`. To get `next.js` to properly serve all of your assets (js, css, html) your must include a `assetPrefix` in your `next.config.js`.
+
+```js
+const debug = process.env.NODE_ENV !== 'production';
+const assetPrefix = debug ? '' : '/your_prefix/';
+
+module.exports = {
+  assetPrefix
+};
+```
+
+Now you will find that when you deploy your project website to github pages all the static assets work, but if you try clicking anything using the `@next/link` component you'll get a 404. If you have any pages with images served from the static folder you will also notice that they do not work either!
+
+## Prefix URLs
+
+So it seems to get our github project page to work we'll also need to all the URLs in our app to be prefixed. This includes both anchor `href`s and img `src`s. You could do this yourself, or you could install [`next-prefixed`](https://github.com/hipstersmoothie/next-prefixed) a package I published to address this issue.
+
+### Configure
+
+First install `next-prefixed` and add the following to your `next.config.js`.
+
+```js
+const debug = process.env.NODE_ENV !== 'production';
+const assetPrefix = debug ? '' : '/your_prefix/';
+
+module.exports = withPlugins([withCSS, withMDX, withBlog], {
+  assetPrefix,
+  publicRuntimeConfig: {
+    assetPrefix
+  }
+});
+```
+
+`publicRuntimeConfig` will expose the `assetPrefix` to our `next.js` app.
+
+### Usage
+
+Now that you have fully configured your `assetPrefix` all thats left to do is switch out all `@next/link` components and `img` tags with the prefixed versions.
+
+```js
+import { Link, Image } from 'next-prefixed';
+
+const Example = () => (
+  <div>
+    <Image src="/static/jimp.png" alt='Code example' />
+    <Link href="/blog" />
+  </div>
+);
+```
+
+These components use `assetPrefix` to prefix all the URLs so they resolve in your github-pages app correctly. Now your project page links work!
+
+### Manual Prefix
+
+If you need to manually prefix some URLs that aren't covered by `next-prefixed`'s components, it also exports `prefixUrl`. This function simply joins the `assetPrefix` with whatever path is supplied to it.
+
+```js
+import { prefixURL } from 'next-prefixed';
+
+prefixURL('/blog'); // => my_prefix/blog
+```
+
+# All done!
+
+Now your github project page should work with `next.js` without a flaw!
