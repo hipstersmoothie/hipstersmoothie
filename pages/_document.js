@@ -10,13 +10,16 @@ export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
     const { html, head, errorHtml, chunks } = renderPage();
 
-    return { html, head, errorHtml, chunks, styles: [flush(), flushBlog()] };
+    flushBlog();
+
+    return { html, head, errorHtml, chunks, styles: [flush()] };
   }
 
   render() {
     return (
       <html>
         <Head>
+          {this.props.styles}
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"
