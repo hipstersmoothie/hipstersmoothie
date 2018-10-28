@@ -188,6 +188,12 @@ const Projects = () => (
 
       <div className="projects">
         <Project
+          githubLink="https://github.com/hipstersmoothie/bulma-swatch-hook"
+          title="bulma-swatch-hook"
+          description="Bulma swatches as a react component or a hook."
+          image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEX///8A0bIAz67z/fxc3sj6//9F2sHb+PQ62L4A0rTW9/EA0bPy/fuq7eFV3MXo+/hm4MuP6Ni77+Wx7+Wb6Nkq1rri+vd849Bs4MzQ9e7r/Pmt7uKk7N9P2cA+2sEp2L6WRmmvAAAEq0lEQVR4nO3cC1rbMBAEYMXBAQIN9EEoUNr737JBhLp5ObKjmdldMheg/7fVrhVLTomZdnFJ/Xv0TGfNJDTxdgWc3AQmvlVwleu5+h+CyhoYl9herYFRif8BV8SAa3EDGLHdTDeBqwQj/msyUYn7gKHazV5gJGK7swaDEQ8CoxB7gDHm4u6YCNZRDzSZOMTbo0DnTzfHKzjx3W6KgJ6JvV00ArEY6HVoDAD6bDfH5uB23BELm4xf4nCgs3YzAuiLOKjJeCSOBPohjgZ6mYtDx8RmHBBHNRlPxILtUn+sP92cWsGJ9XZTAWibeEIX9UGsBLQ7NKoBrbab0+bgdgwSqzQZy8TaQHPtpjrQGrFik7FJhAAtEUFAO3Ox7pjYjAkioMnYIp68XeqP/ukGW8GJvt3AgWoirItaIVKAyqFBAuraDXIObkdCJDQZLZELVLSbRypQQZxxgXxie80Wsokt+T9pJlLbzZNAyO2oLxIhk/hDIyQ+3fyUAJnt5kok5BFVQBpxqlmG70TKWtQMi3Uo7ea7UkgZGqJhQSTea4HNPVz4Rwu8gAOFw4IEfFYuQwZQOiwowPRNJ+QAhcOCBNQNCxZQtrOgAdNNdOAyOjA9RQdqhgUTmL4KhFSgYlhwgfx3Fmxg+xAcmJbstzJsYJpHB7KHBR9IHhYCIHdYKIDpNTpwShwWEiBzWGiA6ZLWaERA3jsLFZA2LGRA1gtuHTAtogM5w0IITM/RgZRhIQUyhoUWSBgWYmB6jA6E/wwlB6KPzsqB6NNQemCaQ4UGgNhhYQEIfcFtAggdFg+tWveW30ChjRpCh4UFYvxhgT4NpSfCdxZyIv40lJpI+BlKTGQcndUSCUAtkXTPQkhkHZ3VEeO/s+AdnVURiS+4RUTmPQsNkQjUEO+oQgWRfc8i/GkoAZF/z4JNjH90VnHPgkrkH51lE8/3LPwTZZfyaETFPQsuUXiDm0Tk37MgE5lHZzVE+j0LOhH7gtsCUXiDm0TUDQsWUfVtKB6Rec/iUKBE7bD4CJJI/hnqUIBE3j2L/uCI4m9DdYER9cPiIygi+6uzPQERwV/QHxQQkfl562MBEWmfKC/ImXgmHgz5Q+W9ORPH5jMMjU9AjN9uPkFHPROpObcb/8RmsYQI7RC/YHzJyNBoXu9gQBvtBldAE8Tm9RkLlBN/oX1J2m5gLdQK8Rq8ArtoNlOsAuYoqti88HxJMBebGbyFboXdUWkrUENsFsiHGAtExgzcF1K7ERWQSBSsQCZRWcB3InotSguYA203hG1EQZBEfQFzUET5CuwCaTcNbxtREACxuSBuIwpSfzNlqYA5datoaAV2qTkXG3MFzKnWUW3MwH2pRbRZwJwaRJMrsEuFdmO4gDknEo0XMOc0ovUC5owfGh4KmDO63bgoYM4oYrOwOgP3ZQxR9VPayAxtN9a2EQUZRLS1DyzNgM2Umxa6leIqkl8nVUzZXOS/TqqYoo7qcQV2OUr0ugK7HCG6bKFb6Ws3/guY00MMUMCcA8QgBczZPzSiFDBnt93Y/SltZHaIoQqYs0GMtAK7dO3G5zaiIB9Eh/vA0qw3U263EQVZVTHmCuzSzvgF/AunfmeJje/OKwAAAABJRU5ErkJggg=="
+        />
+        <Project
           githubLink="https://github.com/hipstersmoothie/next-prefixed"
           title="next-prefixed"
           description="Prefix next links and images. Useful when serving from basePath. (Created while building this website!)"
